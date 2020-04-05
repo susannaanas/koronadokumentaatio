@@ -665,8 +665,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
                 margin: 0;
             }
 
-#closeButton {
+#about {
+	flex: 1;
                 padding-right: 16px;
+            }
+
+#closeButton {
+                padding-right: 64px;
             }
 
             .closeButton {
