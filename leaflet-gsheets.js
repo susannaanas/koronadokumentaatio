@@ -62,7 +62,7 @@ function addPoints(data) {
   if (pointGroupLayer != null) {
     pointGroupLayer.remove();
   }
-  pointGroupLayer = L.layerGroup().addTo(map);
+  pointGroupLayer = L.featureGroup().addTo(map);
 
   for (var row = 0; row < data.length; row++) {
     var marker = L.marker([data[row].Latitud, data[row].Longitud]).addTo(
