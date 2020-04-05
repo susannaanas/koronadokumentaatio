@@ -667,6 +667,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 #about {
 	flex: 1;
+	padding-left: 16px;
                 padding-right: 16px;
             }
 
