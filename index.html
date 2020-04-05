@@ -26,11 +26,18 @@
     </style>
 </head>
 <body>
+    <div id="info"><h1>Samtidsdokumentationer om coronaviruset i Sverige</h1><div id="closeButton"><button class="closeButton" type="button">Stäng</button></div></div>
     <div id="map"></div>
+    <script type="text/javascript">
+    document.getElementById('closeButton').onclick = function changeContent() {
+        document.getElementById('info').style = "display:none";
+    }
+    </script>
     <script src="js/leaflet.js"></script>
     <script src="js/leaflet-sidebar.js"></script>
     <script src="js/leaflet.awesome-markers.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
     <script src="leaflet-gsheets.js"></script>
+    
 </body>
 </html>
