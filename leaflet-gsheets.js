@@ -106,6 +106,7 @@ function addPoints(data) {
         if(e.target.feature.properties.telefon != "") {
           document.getElementById("sidebar-content").innerHTML += "<br/>Telefon: " + e.target.feature.properties.telefon;
         }
+        sidebar.open(panelID);
       }
     });
 
