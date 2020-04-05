@@ -638,3 +638,59 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
+
+
+#info {
+                background-color: #fff;
+                width: 100vw;
+                font: 16px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+                padding: 16px 0;
+                z-index: 999;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: flex;
+                flex-direction: row;
+                opacity: 0.75;
+            }
+
+            #info h1 {
+                font-size: 24px;
+                margin-bottom: 0;
+                margin-top: 0;
+                padding-bottom: 8px;
+            }
+
+            #info p {
+                margin: 0;
+            }
+
+#closeButton {
+                padding-right: 16px;
+            }
+
+            .closeButton {
+                font-size: 20px;
+                padding: 8px;
+                height: 100%;
+            }
+
+            @media screen and (max-width: 600px) {
+                #info {
+                    flex-direction: column;
+                }
+                #about {
+                    padding: 0 16px;
+                }
+                .logo {
+                    width: 200px;
+                }
+                #closeButton {
+                    padding: 0 16px;
+                }
+
+                .closeButton {
+                    width: 100%;
+                    font-size: 16px;
+                }
+            }
