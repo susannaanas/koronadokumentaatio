@@ -77,17 +77,21 @@ function addPoints(data) {
     // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
       properties: {
-        institution: data[row].Institution,
-        url: data[row]["Dokumentationens webbplats"]
+        institution: data[row]["Institution"],
+        dokumentation: data[row]["Dokumentationens namn"],
+        url: data[row]["Dokumentationens webbplats"],
+        kontaktperson: data[row]["Kontaktperson"],
+        mejl: data[row]["Mejl till kontaktperson (om det ska synas)"],
+        telefon: data[row]["Telefonnr till kontaktperson (om det ska synas)"]
       }
     };
     marker.on({
       click: function(e) {
         L.DomEvent.stopPropagation(e);
         document.getElementById("sidebar-title").innerHTML =
-          e.target.feature.properties.Institution;
-        document.getElementById("sidebar-content").innerHTML =
-          e.target.feature.properties.url;
+          e.target.feature.properties.institution;
+        document.getElementById("sidebar-content").innerHTML = "Institution: " + 
+          e.target.feature.properties.url + " bla bla bla";
         sidebar.open(panelID);
       }
     });
