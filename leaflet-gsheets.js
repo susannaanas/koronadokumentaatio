@@ -90,13 +90,22 @@ function addPoints(data) {
         L.DomEvent.stopPropagation(e);
         document.getElementById("sidebar-title").innerHTML =
           e.target.feature.properties.institution;
-        document.getElementById("sidebar-content").innerHTML = "Institution: " + e.target.feature.properties.institution
-          + "<br/>Dokumentation: " + e.target.feature.properties.dokumentation
-        + '<br/>Webbplats: <a href="' + e.target.feature.properties.url + '" target="_blank">' + e.target.feature.properties.url + "</a>"
-        + "<br/>Kontaktperson: " + e.target.feature.properties.kontaktperson
-        + "<br/>Mejladress: " + e.target.feature.properties.mejl
-        + "<br/>Telefon: " + e.target.feature.properties.telefon;
-        sidebar.open(panelID);
+        document.getElementById("sidebar-content").innerHTML = "";
+        if(e.target.feature.properties.dokumentation != "") {
+          document.getElementById("sidebar-content").innerHTML += "Dokumentation: " + e.target.feature.properties.dokumentation;
+        }
+        if(e.target.feature.properties.url != "") {
+          document.getElementById("sidebar-content").innerHTML += '<br/>Webbplats: <a href="' + e.target.feature.properties.url + '" target="_blank">' + e.target.feature.properties.url + "</a>"
+        }
+        if(e.target.feature.properties.kontaktperson != "") {
+          document.getElementById("sidebar-content").innerHTML += "<br/>Kontaktperson: " + e.target.feature.properties.kontaktperson;
+        }
+        if(e.target.feature.properties.mejl != "") {
+          document.getElementById("sidebar-content").innerHTML += "<br/>Mejladress: " + e.target.feature.properties.mejl;
+        }
+        if(e.target.feature.properties.telefon != "") {
+          document.getElementById("sidebar-content").innerHTML += "<br/>Telefon: " + e.target.feature.properties.telefon;
+        }
       }
     });
 
