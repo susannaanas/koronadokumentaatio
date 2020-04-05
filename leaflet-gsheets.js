@@ -18,7 +18,9 @@ function init() {
 window.addEventListener("DOMContentLoaded", init);
 
 // Create a new Leaflet map centered on the continental US
-var map = L.map("map").setView([40, -100], 4);
+var map = L.map("map", {zoomControl:false});
+var zoom = L.control.zoom({position: 'bottomleft'});
+zoom.addTo(map);
 
 // This is the Carto Positron basemap
 var basemap = L.tileLayer(
