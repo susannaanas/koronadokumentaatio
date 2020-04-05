@@ -90,8 +90,12 @@ function addPoints(data) {
         L.DomEvent.stopPropagation(e);
         document.getElementById("sidebar-title").innerHTML =
           e.target.feature.properties.institution;
-        document.getElementById("sidebar-content").innerHTML = "Institution: " + 
-          e.target.feature.properties.url + " bla bla bla";
+        document.getElementById("sidebar-content").innerHTML = "Institution: " + e.target.feature.properties.institution
+          + "<br/>Dokumentation: " + e.target.feature.properties.dokumentation
+        + '<br/>Webbplats: <a href="' + e.target.feature.properties.url + '">' + e.target.feature.properties.url + "</a>"
+        + "<br/>Kontaktperson: " + e.target.feature.properties.kontaktperson
+        + "<br/>Mejladress: " + e.target.feature.properties.mejl
+        + "<br/>Telefon: " + e.target.feature.properties.telefon;
         sidebar.open(panelID);
       }
     });
