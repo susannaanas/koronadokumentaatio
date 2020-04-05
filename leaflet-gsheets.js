@@ -45,7 +45,7 @@ var panelContent = {
   id: panelID,
   tab: "<i class='fa fa-bars active'></i>",
   pane: "<p id='sidebar-content'></p>",
-  title: "<h2 id='sidebar-title'>No state selected</h2>"
+  title: "<h2 id='sidebar-title'>Ingen dokumentation vald</h2>"
 };
 sidebar.addPanel(panelContent);
 
@@ -65,7 +65,7 @@ function addPoints(data) {
   pointGroupLayer = L.layerGroup().addTo(map);
 
   for (var row = 0; row < data.length; row++) {
-    var marker = L.marker([data[row].latitud, data[row].longitud]).addTo(
+    var marker = L.marker([data[row].Latitud, data[row].Longitud]).addTo(
       pointGroupLayer
     );
 
@@ -75,17 +75,17 @@ function addPoints(data) {
     // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
       properties: {
-        location: data[row].location,
-        category: data[row].category
+        institution: data[row].Institution,
+        url: data[row]["Dokumentationens webbplats"]
       }
     };
     marker.on({
       click: function(e) {
         L.DomEvent.stopPropagation(e);
         document.getElementById("sidebar-title").innerHTML =
-          e.target.feature.properties.location;
+          e.target.feature.properties.Institution;
         document.getElementById("sidebar-content").innerHTML =
-          e.target.feature.properties.category;
+          e.target.feature.properties.url;
         sidebar.open(panelID);
       }
     });
