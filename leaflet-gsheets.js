@@ -101,7 +101,7 @@ function addPoints(data) {
           document.getElementById("sidebar-content").innerHTML += "<br/>Kontaktperson: " + e.target.feature.properties.kontaktperson;
         }
         if(e.target.feature.properties.mejl != "") {
-          document.getElementById("sidebar-content").innerHTML += "<br/>Mejladress: " + e.target.feature.properties.mejl;
+          document.getElementById("sidebar-content").innerHTML += '<br/>Mejladress: <a href="mailto:' + e.target.feature.properties.mejl + '">' + e.target.feature.properties.mejl + "</a>";
         }
         if(e.target.feature.properties.telefon != "") {
           document.getElementById("sidebar-content").innerHTML += "<br/>Telefon: " + e.target.feature.properties.telefon;
