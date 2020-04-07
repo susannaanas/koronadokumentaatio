@@ -13,7 +13,7 @@ function init() {
   var pointsURL =
     "https://docs.google.com/spreadsheets/d/1X55II1fEv9rnCIw9vZxN2x187o3k9irraoikggUFDo0/edit?usp=sharing";
 
-  Tabletop.init({ key: pointsURL, callback: addPoints, simpleSheet: true }); // simpleSheet assumes there is only one table and automatically sends its data
+  Tabletop.init({ key: pointsURL, callback: addPoints, simpleSheet: false }); // simpleSheet assumes there is only one table and automatically sends its data
 }
 window.addEventListener("DOMContentLoaded", init);
 
@@ -60,7 +60,7 @@ var pointGroupLayer;
 
 // addPoints is a bit simpler, as no GeoJSON is needed for the points
 // It does the same check to overwrite the existing points layer once the Google Sheets data comes along
-function addPoints(data) {
+function addPoints(data, tabletop) {
   if (pointGroupLayer != null) {
     pointGroupLayer.remove();
   }
