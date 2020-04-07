@@ -64,8 +64,8 @@ function addPoints(data, tabletop) {
   if (pointGroupLayer != null) {
     pointGroupLayer.remove();
   }
-  pointGroupLayer = L.featureGroup().addTo(map);
-
+  pointGroupLayer = L.markerClusterGroup().addTo(map);
+  
   for (var row = 0; row < data["Sverige"].elements.length; row++) {
     var marker = L.marker([data["Sverige"].elements[row].Latitud, data["Sverige"].elements[row].Longitud]).addTo(
       pointGroupLayer

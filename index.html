@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="css/leaflet-sidebar.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist//MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist//MarkerCluster.Default.css" />
     <style>
         body {
             padding: 0;
@@ -32,6 +34,28 @@
         #sidebar-content, #sidebar-title {
             word-break: break-word;
             margin-right: 40px;
+        }
+        .marker-cluster-small { background-color: rgba(222, 103, 115, .6); }
+        .marker-cluster-small div { background-color: rgba(222, 103, 115, .6); }
+        .marker-cluster-medium { background-color: rgba(222, 103, 115, .6); }
+        .marker-cluster-medium div { background-color: rgba(222, 103, 115, .6); }
+        .marker-cluster-large { background-color: rgba(213, 61, 76, .6); }
+        .marker-cluster-large div { background-color: rgba(213, 61, 76, .6); }
+        .marker-cluster { background-clip: padding-box; border-radius: 20px; }
+
+        .marker-cluster div {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+            margin-top: 5px;
+            text-align: center;
+            border-radius: 15px;
+            font: 12px Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+
+        .marker-cluster span {
+            line-height: 30px;
         }
     </style>
 </head>
@@ -48,6 +72,7 @@
     <script src="js/leaflet.awesome-markers.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
     <script src="leaflet-gsheets.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist//leaflet.markercluster-src.js"></script>
     
 </body>
 </html>
