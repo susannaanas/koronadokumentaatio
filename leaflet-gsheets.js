@@ -65,9 +65,14 @@ function addPoints(data, tabletop) {
     pointGroupLayer.remove();
   }
   pointGroupLayer = L.markerClusterGroup().addTo(map);
-  
-  for (var row = 0; row < data["Sverige"].elements.length; row++) {
-    var marker = L.marker([data["Sverige"].elements[row].Latitud, data["Sverige"].elements[row].Longitud]).addTo(
+  addPointsByCountry(data, "Sverige");
+  addPointsByCountry(data, "Norge");
+  map.fitBounds(pointGroupLayer.getBounds());
+}
+
+function addPointsByCountry(data, country) {
+  for (var row = 0; row < data[country].elements.length; row++) {
+    var marker = L.marker([data[country].elements[row].Latitud, data[country].elements[row].Longitud]).addTo(
       pointGroupLayer
     );
 
@@ -77,12 +82,12 @@ function addPoints(data, tabletop) {
     // COMMENT THE NEXT 14 LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
       properties: {
-        institution: data["Sverige"].elements[row]["Institution"],
-        dokumentation: data["Sverige"].elements[row]["Dokumentationens namn"],
-        url: data["Sverige"].elements[row]["Dokumentationens webbplats"],
-        kontaktperson: data["Sverige"].elements[row]["Kontaktperson"],
-        mejl: data["Sverige"].elements[row]["Mejl till kontaktperson (om det ska synas)"],
-        telefon: data["Sverige"].elements[row]["Telefonnr till kontaktperson (om det ska synas)"]
+        institution: data[country].elements[row]["Institution"],
+        dokumentation: data[country].elements[row]["Dokumentationens namn"],
+        url: data[country].elements[row]["Dokumentationens webbplats"],
+        kontaktperson: data[country].elements[row]["Kontaktperson"],
+        mejl: data[country].elements[row]["Mejl till kontaktperson (om det ska synas)"],
+        telefon: data[country].elements[row]["Telefonnr till kontaktperson (om det ska synas)"]
       }
     };
     marker.on({
@@ -120,5 +125,4 @@ function addPoints(data, tabletop) {
     });
     marker.setIcon(icon);
   }
-  map.fitBounds(pointGroupLayer.getBounds());
 }
