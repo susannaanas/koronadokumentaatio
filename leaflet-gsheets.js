@@ -48,7 +48,7 @@ var panelContent = {
   id: panelID,
   tab: "<i class='fa fa-bars active'></i>",
   pane: "<p id='sidebar-content'></p>",
-  title: "<h2 id='sidebar-title'>Ingen dokumentation vald</h2>"
+  title: "<h2 id='sidebar-title'>Mitään projektia ei ole valittu</h2>"
 };
 sidebar.addPanel(panelContent);
 
@@ -99,19 +99,19 @@ function addPointsByCountry(data, country) {
           e.target.feature.properties.institution;
         document.getElementById("sidebar-content").innerHTML = "";
         if(e.target.feature.properties.dokumentation != "") {
-          document.getElementById("sidebar-content").innerHTML += "Dokumentation: " + e.target.feature.properties.dokumentation;
+          document.getElementById("sidebar-content").innerHTML += "Dokumentaatio: " + e.target.feature.properties.dokumentation;
         }
         if(e.target.feature.properties.url != "") {
-          document.getElementById("sidebar-content").innerHTML += '<br/>Webbplats: <a href="' + e.target.feature.properties.url + '" target="_blank">' + e.target.feature.properties.url + "</a>"
+          document.getElementById("sidebar-content").innerHTML += '<br/>Verkkosivu: <a href="' + e.target.feature.properties.url + '" target="_blank">' + e.target.feature.properties.url + "</a>"
         }
         if(e.target.feature.properties.kontaktperson != "") {
-          document.getElementById("sidebar-content").innerHTML += "<br/>Kontaktperson: " + e.target.feature.properties.kontaktperson;
+          document.getElementById("sidebar-content").innerHTML += "<br/>Kontaktihenkilö: " + e.target.feature.properties.kontaktperson;
         }
         if(e.target.feature.properties.mejl != "") {
-          document.getElementById("sidebar-content").innerHTML += '<br/>Mejladress: <a href="mailto:' + e.target.feature.properties.mejl + '">' + e.target.feature.properties.mejl + "</a>";
+          document.getElementById("sidebar-content").innerHTML += '<br/>Sähköposti: <a href="mailto:' + e.target.feature.properties.mejl + '">' + e.target.feature.properties.mejl + "</a>";
         }
         if(e.target.feature.properties.telefon != "") {
-          document.getElementById("sidebar-content").innerHTML += "<br/>Telefon: " + e.target.feature.properties.telefon;
+          document.getElementById("sidebar-content").innerHTML += "<br/>Puhelin: " + e.target.feature.properties.telefon;
         }
         sidebar.open(panelID);
       }
