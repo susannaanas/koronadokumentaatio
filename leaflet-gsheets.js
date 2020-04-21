@@ -99,7 +99,7 @@ function addPointsByCountry(data, country) {
           e.target.feature.properties.institution;
         document.getElementById("sidebar-content").innerHTML = "";
         if(e.target.feature.properties.dokumentation != "") {
-          document.getElementById("sidebar-content").innerHTML += "Dokumentaatio: " + e.target.feature.properties.dokumentation;
+          document.getElementById("sidebar-content").innerHTML += /* "Dokumentaatio: " +  */e.target.feature.properties.dokumentation;
         }
         if(e.target.feature.properties.url != "") {
           document.getElementById("sidebar-content").innerHTML += '<br/>Verkkosivu: <a href="' + e.target.feature.properties.url + '" target="_blank">' + e.target.feature.properties.url + "</a>"
