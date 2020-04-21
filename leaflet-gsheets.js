@@ -68,6 +68,7 @@ function addPoints(data, tabletop) {
   pointGroupLayer = L.markerClusterGroup().addTo(map);
   addPointsByCountry(data, "Sverige");
   addPointsByCountry(data, "Norge");
+  addPointsByCountry(data, "Finland");
   map.fitBounds(pointGroupLayer.getBounds());
 }
 
