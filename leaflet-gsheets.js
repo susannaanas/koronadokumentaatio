@@ -102,16 +102,16 @@ function addPointsByCountry(data, country) {
           document.getElementById("sidebar-content").innerHTML += /* "Dokumentaatio: " +  */e.target.feature.properties.dokumentation;
         }
         if(e.target.feature.properties.url != "") {
-          document.getElementById("sidebar-content").innerHTML += '<br/>Verkkosivu: <a href="' + e.target.feature.properties.url + '" target="_blank">' + e.target.feature.properties.url + "</a>"
+          document.getElementById("sidebar-content").innerHTML += '<br/><br/>Verkkosivu: <a href="' + e.target.feature.properties.url + '" target="_blank">' + e.target.feature.properties.url + "</a>"
         }
         if(e.target.feature.properties.kontaktperson != "") {
-          document.getElementById("sidebar-content").innerHTML += "<br/>Kontaktihenkilö: " + e.target.feature.properties.kontaktperson;
+          document.getElementById("sidebar-content").innerHTML += "<br/><br/>Kontaktihenkilö: " + e.target.feature.properties.kontaktperson;
         }
         if(e.target.feature.properties.mejl != "") {
-          document.getElementById("sidebar-content").innerHTML += '<br/>Sähköposti: <a href="mailto:' + e.target.feature.properties.mejl + '">' + e.target.feature.properties.mejl + "</a>";
+          document.getElementById("sidebar-content").innerHTML += '<br/><br/>Sähköposti: <a href="mailto:' + e.target.feature.properties.mejl + '">' + e.target.feature.properties.mejl + "</a>";
         }
         if(e.target.feature.properties.telefon != "") {
-          document.getElementById("sidebar-content").innerHTML += "<br/>Puhelin: " + e.target.feature.properties.telefon;
+          document.getElementById("sidebar-content").innerHTML += "<br/><br/>Puhelin: " + e.target.feature.properties.telefon;
         }
         sidebar.open(panelID);
       }
