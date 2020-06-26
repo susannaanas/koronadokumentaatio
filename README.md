@@ -1,3 +1,5 @@
+See the map in https://susannaanas.github.io/koronadokumentaatio/
+
 # leaflet-gsheets
 
 How to create a simple [Leaflet](https://leafletjs.com/) web map that automatically pulls data from two simple Google Sheets tables. Sidebar created using [leaflet-sidebar-v2](https://github.com/nickpeihl/leaflet-sidebar-v2), and Google Sheets connection with [Tabletop.js](https://github.com/jsoma/tabletop).
